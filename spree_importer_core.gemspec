@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 3.0.0'
+  s.add_dependency 'spree_core', '~> 2.1.0'
 
   s.add_development_dependency 'capybara', '~> 2.1'
   s.add_development_dependency 'coffee-rails'
@@ -30,11 +30,14 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sqlite3'
 
   # For file upload to read
-  s.add_development_dependency 'paperclip', '~> 4.2'
+  s.add_development_dependency 'paperclip'
 
   # For handling progress status
   s.add_dependency 'state_machines'
 
   # Roo provides an interface to Open Office, Excel, and Google Spreadsheets
   s.add_dependency 'roo'
+
+  # Sidekiq let perform async tasks when ActiveJob is unavailable
+  s.add_dependency 'sidekiq'
 end

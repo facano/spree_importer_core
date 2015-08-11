@@ -66,7 +66,7 @@ module Spree
       #
       # @params
       #   row   => A row to be processed
-      def load_data(row:)
+      def load_data(row)
         raise "#{__FILE__}:#{__LINE__} You must define it"
       end
 
@@ -91,7 +91,8 @@ module Spree
         #   backtrace => Error Bactrace
         #   row_index => Failed row index
         #   data      => Readed data
-        def add_error(message:, backtrace:, row_index:, data:)
+        def add_error(message, backtrace, row_index, data)
+          # raise ArgumentError unless message && backtrace && row_index && data
           @import.messages << {message: message, backtrace: backtrace, row_index: row_index, data: data}
         end
 
